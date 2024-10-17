@@ -5,7 +5,7 @@ The **Job Application Tracker** is a Chrome extension built to simplify the job 
 ## **Features**
 - **Save Job Postings**: Save job listings directly from websites while browsing.
 - **Track Application Status**: Monitor each stage of the job application process, from submission to offer or rejection.
-- **Add Personalized Notes**: Keep track of key details such as interview dates, notes, tasks, or important deadlines.
+- **Add Personalized Notes**: Keep track of key details such as interview dates, recruiter information, tasks, important deadlines, etc.
 - **Organized Dashboard**: View the status of applications in one place with clear and concise details.
 - **Browser Integration**: Access your saved job applications and notes right from the browser without leaving the job search website.
 
@@ -25,7 +25,7 @@ To install and run this project on your local machine, follow these steps:
 - **MongoDB Atlas**: Set up a free MongoDB Atlas account and cluster [here](https://www.mongodb.com/cloud/atlas).
 - **AWS Account**: Create a free-tier AWS account for Lambda and S3 services [here](https://aws.amazon.com/free/).
 - **Git**: Ensure you have Git installed to manage version control.
-- **Code Editor**: You can use any IDE of your preference (e.g., VSCode, Sublime Text, IntelliJ, etc.).
+- **Code Editor**: You can use any IDE of your preference (VSCode, Sublime Text, IntelliJ, etc.).
 
 ### **Clone the Repository**
 1. Visit the GitHub repository page.
@@ -71,7 +71,7 @@ Ensure your MongoDB connection string is correctly set up in your server.js file
 
 ## **Adding the Extension to Chrome**
 
-1.	In Chrome, go to chrome://extensions/.
+1.	In Chrome, go to [Extensions](chrome://extensions/).
 2.	Enable Developer Mode (top right).
 3.	Click Load unpacked and select the build folder from your React project (chrome-extension/build).
 4.	The extension will now be loaded and visible in your browser.
