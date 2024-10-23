@@ -1,25 +1,89 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 3,
+  "name": "Job Application Tracker",
+  "description": "Track job applications, save jobs, contacts, and companies from multiple job search platforms.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "*://www.linkedin.com/*",
+    "*://www.handshake.com/*",
+    "*://www.indeed.com/*",
+    "*://www.glassdoor.com/*",
+    "*://www.ziprecruiter.com/*",
+    "*://www.monster.com/*",
+    "*://www.careerbuilder.com/*",
+    "*://www.flexjobs.com/*",
+    "*://www.simplyhired.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "matches": [
+        "*://www.linkedin.com/*",
+        "*://www.handshake.com/*",
+        "*://www.indeed.com/*",
+        "*://www.glassdoor.com/*",
+        "*://www.ziprecruiter.com/*",
+        "*://www.monster.com/*",
+        "*://www.careerbuilder.com/*",
+        "*://www.flexjobs.com/*",
+        "*://www.simplyhired.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "css": ["contentStyles.css"]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon16.png", 
+        "icons/icon48.png", 
+        "icons/icon128.png"
+      ],
+      "matches": [
+        "*://www.linkedin.com/*",
+        "*://www.handshake.com/*",
+        "*://www.indeed.com/*",
+        "*://www.glassdoor.com/*",
+        "*://www.ziprecruiter.com/*",
+        "*://www.monster.com/*",
+        "*://www.careerbuilder.com/*",
+        "*://www.flexjobs.com/*",
+        "*://www.simplyhired.com/*"
+      ]
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      }
+    }
+  }
 }
